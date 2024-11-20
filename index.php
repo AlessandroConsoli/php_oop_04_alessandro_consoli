@@ -4,32 +4,51 @@ class Car {
 
     private $numTelaio;
 
-    public function __construct($telaio){
-        $this->numTelaio = $telaio;
+
+    protected function setCarTelaio($string){
+
+        return $this->numTelaio = $string;
     }
 
-    public function printTelaio(){
+    protected function getCarTelaio(){
         return $this->numTelaio;
     }
+
 }
 
-// $newcar = new Car("fxhdrt3");
-// $newcar->printTelaio();
 
-class Opel extends Car{
+class Fiat extends Car{
 
     protected $license;
     protected $name;
 
     public function __construct($targa, $nome){
-        $this->license = $targa;
+
+        $this->licence = $targa;
         $this->name = $nome;
+
+    }
+
+    public function setMyCarTelaio($string){
+
+        return $this->setCarTelaio($string);
+
+    }
+
+    public function getMyCarTelaio(){
+        return $this->getCarTelaio();
+    }
+
+    public function printMessage(){
+        echo "La mia macchina è $this->name con targa $this->licence e un numero di telaio " . $this->getMyCarTelaio() . "\n";
     }
 
 }
 
 
-  
+$car = new Fiat ("ND123OJ", "Opel");
+$car->setMyCarTelaio("1234");
+$car->printMessage();
 
 
 
