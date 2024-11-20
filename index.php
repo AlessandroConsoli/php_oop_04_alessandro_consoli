@@ -19,7 +19,7 @@ class Car {
 
 class Fiat extends Car{
 
-    protected $license;
+    protected $licence;
     protected $name;
 
     public function __construct($targa, $nome){
@@ -30,9 +30,7 @@ class Fiat extends Car{
     }
 
     public function setMyCarTelaio($string){
-
         return $this->setCarTelaio($string);
-
     }
 
     public function getMyCarTelaio(){
